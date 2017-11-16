@@ -1,0 +1,112 @@
+:root {
+  font: 600 16px 'Open Sans', sans-serif;
+}
+
+body {
+  background: #bdc3c7;
+  margin: 0;
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 730px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.todo-app {
+  background: #ecf0f1;
+  width: 100%;
+  border-radius: 4px 4px 0 0;
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.1);
+  max-width: calc(100% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  order: -1;
+  display: flex;
+  flex-direction: column;
+}
+[class^="todo-list__item"] {
+  cursor: pointer;
+  height: 80px;
+  display: block;
+  text-transform: uppercase;
+  color: #af544f;
+  letter-spacing: 2px;
+  box-sizing: border-box;
+  padding: 27px 33px 0 78px;
+  box-shadow: 0 1px 0 0 #e6e6e6, 0 2px 0 0 white;
+  background-image: url('https://jsbin-user-assets.s3.amazonaws.com/GarthDB/box.svg');
+  background-repeat: no-repeat;
+  background-position: 28px 16px;
+}
+.todo-list__item--completed {
+  color: #16a085;
+  background-image: url('https://jsbin-user-assets.s3.amazonaws.com/GarthDB/done.svg')
+}
+
+.add-todo {
+  width: 100%;
+  position: relative;
+  height: 80px;
+  margin: 2px 0 1px;
+}
+
+.add-todo__button {
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 100%;
+  background: transparent;
+  color: rgba(0, 0, 0, 0);
+  border: 0;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: 28px 16px;
+  background-image: url('https://jsbin-user-assets.s3.amazonaws.com/GarthDB/add.svg');
+}
+.add-todo__button:focus {
+  outline: none;
+}
+.add-todo__input {
+  border: 0;
+  font-size: 1rem;
+  height: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  padding-left: 80px;
+  width: 100%;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.add-todo__input:focus {
+  outline: none;
+  background: rgba(0,0,0,0.05)
+}
+.add-todo__input::placeholder {
+  color: #b3b3b3;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity:  1;
+}
+
+
+
+

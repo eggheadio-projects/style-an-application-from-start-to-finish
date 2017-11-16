@@ -1,0 +1,212 @@
+:root {
+  font: 600 16px 'Open Sans', sans-serif;
+}
+
+body {
+  background: #bdc3c7;
+  margin: 0;
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 730px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.todo-app {
+  background: #ecf0f1;
+  width: 100%;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.1);
+  max-width: calc(100% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+}
+[class^="todo-list__item"] {
+  cursor: pointer;
+  height: 80px;
+  display: block;
+  text-transform: uppercase;
+  color: #af544f;
+  letter-spacing: 2px;
+  box-sizing: border-box;
+  padding: 27px 33px 0 78px;
+  box-shadow: 0 -1px 0 0 white, 0 -2px 0 0 #e6e6e6;
+  background-image: url('https://jsbin-user-assets.s3.amazonaws.com/GarthDB/box.svg');
+  background-repeat: no-repeat;
+  background-position: 28px 16px;
+}
+.todo-list__item--completed {
+  color: #16a085;
+  background-image: url('https://jsbin-user-assets.s3.amazonaws.com/GarthDB/done.svg')
+}
+
+.add-todo {
+  width: 100%;
+  position: relative;
+  height: 80px;
+  margin: 2px 0 1px;
+}
+
+.add-todo__button {
+  position: absolute;
+  display: block;
+  width: 60px;
+  height: 100%;
+  background: transparent;
+  color: rgba(0, 0, 0, 0);
+  border: 0;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: 28px 16px;
+  background-image: url('https://jsbin-user-assets.s3.amazonaws.com/GarthDB/add.svg');
+}
+.add-todo__button:focus {
+  outline: none;
+}
+.add-todo__input {
+  border: 0;
+  font-size: 1rem;
+  height: 100%;
+  background: transparent;
+  box-sizing: border-box;
+  padding-left: 80px;
+  width: 100%;
+  color: #666666;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+.add-todo__input:focus {
+  outline: none;
+  background: rgba(0,0,0,0.05)
+}
+.add-todo__input::placeholder {
+  color: #b3b3b3;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity:  1;
+}
+
+.filters {
+  height: 80px;
+  width: calc(100% + 20px);
+  box-sizing: border-box;
+  padding: 32px 35px 0;
+  background: #2c3e50;
+  color: #ecf0f1;
+  font-weight: 700;
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.2);
+  border-radius: 0 0 3px 3px;
+  border: none;
+  order: -1;
+}
+
+.filters__title, .filter {
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.filters__title {
+  float: left;
+}
+
+.filter {
+  cursor: pointer;
+}
+
+[class^="filter__label"] {
+  position: relative;
+  display: inline-block;
+  padding-left: 16px;
+  color: rgba(236,240,241,0.3);
+}
+
+[class^="filter__label"]:hover {
+  color: #ccc;
+}
+
+.filter__radio:checked + [class^="filter__label"] {
+  color: #fff;
+}
+
+[class^="filter__label"]::before,
+.filter__label--all::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  left: 0;
+  background: #647380;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 2px 1px rgba(0,0,0,0.2);
+}
+
+.filter__radio {
+  position: absolute;
+  opacity: 0;
+}
+
+.filter__label--all {
+  padding-left: 21px;
+}
+
+.filter__label--all::after {
+  left: 5px;
+}
+
+.filter__radio:checked + .filter__label--all::before {
+  background: #af544f;
+}
+.filter__radio:checked + .filter__label--all::after {
+  background: #16a085;
+}
+
+.filter__radio:checked + .filter__label--active::before {
+  background: #af544f;
+}
+
+.filter__radio:checked + .filter__label--completed::before {
+  background: #16a085;
+}
+
+@media only screen and (min-width: 730px) {
+  .container {
+    max-width: 720px;
+    justify-content: flex-end;
+  }
+  .todo-app {
+    border-radius: 4px 4px 0 0;
+  }
+  .todo-list {
+    order: -1;
+    flex-direction: column;
+  }
+  [class^="todo-list__item"] {
+    box-shadow: 0 1px 0 0 #e6e6e6, 0 2px 0 0 white;
+  }
+  .filters {
+    border-radius: 3px 3px 0 0;
+    order: 0;
+  }
+}
