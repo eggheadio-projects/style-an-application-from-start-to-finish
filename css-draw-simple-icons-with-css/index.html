@@ -3,12 +3,20 @@
 <head>
   <meta charset="utf-8">
   <script src="https://unpkg.com/redux@3.7.2/lib/index.js"></script>
-   <script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
-  <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+   <script src="https://unpkg.com/react@16.1.1/index.js"></script>
+  <script src="https://unpkg.com/react-dom@16.1.1/index.js"></script>
   <script src="https://unpkg.com/react-redux@5.0.6/lib/index.js"></script>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:600,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
+	<script>
+    	var originalConsoleLog = console.log
+    	console.log = function () {
+      		originalConsoleLog.apply(console, arguments)
+      		var args = Array.prototype.slice.call(arguments);
+      		document.body.innerText += args.join(' ') + '\n';
+    };
+    </script>
 	<script src="script.js"></script>
     <link rel=“stylesheet” href=“app.css”>
   <div id='root' class="container"></div>
