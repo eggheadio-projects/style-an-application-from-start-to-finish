@@ -1,4 +1,4 @@
-const ReactCSSTransitionGroup = React.addons.CSSTransitionGroup;
+const ReactCSSTransitionGroup = ReactTransitionGroup.TransitionGroup;
 
 const todo = (state, action) => {
   switch (action.type) {
